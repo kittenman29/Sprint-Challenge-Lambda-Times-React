@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import Card from './Card';
+import uuidv4 from 'uuid';
 
 const Cards = props => {
+  console.log(props)
   return (
     <div className="cards-container">
       {/* Using the cards prop, map over the list creating a 
           new Card component for each passing the card as the only prop*/}
+        {props.cardData.map(banana => (
+          <Card 
+          key={uuidv4()}
+          pineapple={banana.headline} 
+          img={banana.img}
+          author={banana.author}
+          />
+        ))}
     </div>
   )
 }
