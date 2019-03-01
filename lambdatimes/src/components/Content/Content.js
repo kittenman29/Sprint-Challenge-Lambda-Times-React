@@ -12,14 +12,12 @@ export default class Content extends Component {
     this.state = {
       selected: 'all',
       tabs: [],
-      cards: [],
-      cardData: []
+      cards: []
     };
   }
 
   componentDidMount() {
     // Once the component has mounted, get the data and reflect that data on the state.
-    this.setState({cardData})
   }
 
   changeSelected = tab => {
@@ -33,7 +31,6 @@ export default class Content extends Component {
       
       Notice that we're passing this function to our <Cards /> component below.
       This function returns an array of cards, so we can just pass it down as such.
-
       Your algorithim for the logic here is as follows: 
         - if the selected tab is 'all' it should return all 
           of the items from cardData. 
@@ -50,8 +47,8 @@ export default class Content extends Component {
           `selectedTab` that includes the currently selected tab
           and `selectTabHandler` that includes the function to change the selected tab
         */}
-        <Tabs tabs={this.state.tabs}/>
-        <Cards cards={this.filterCards()} cardData={this.state.cardData} />
+        <Tabs tabs={this.state.tabs} />
+        <Cards cards={this.filterCards()} />
       </div>
     );
   }
